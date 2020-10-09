@@ -72,7 +72,7 @@ jobs:
       uses: ./microsoft/powerplatform-actions/export-solution
       with:
         user-name: ${{ env.sourceEnvironmentUserId }}
-        password-secret: ${{ secrets[env.sourceEnvironmentSecretName] }}
+        password-secret: ${{ secrets.DEV_ENVIRONMENT_SECRET }} # ${{ secrets[env.sourceEnvironmentSecretName] }}
         solution-name: ${{ env.solutionName }}
         environment-url: ${{ env.sourceEnvironmentUrl }}
         solution-output-file: "${{ env.solutionName }}.zip"
