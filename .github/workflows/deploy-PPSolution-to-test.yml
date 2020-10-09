@@ -251,6 +251,7 @@ jobs:
           $jsonData = ConvertTo-Json -InputObject $status
           echo "Data constructed as status.json file is not present :: " $jsonData
         }
+        echo "URI : $uri"
         echo "Invoking the WebHook Url"
         Invoke-RestMethod -Uri $uri -Body $jsonData  -Method POST -ContentType 'application/json'
         echo "Invoked the WebHook Url"
