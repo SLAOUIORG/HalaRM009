@@ -55,6 +55,7 @@ jobs:
         echo "::set-env name=requestId::$($hashProperties.requestid)"
         echo "::set-env name=projectId::$($hashProperties.projectId)"
         echo "::set-env name=notes::$($hashProperties.notes)"
+        echo 'SECRETS: ${{ secrets[env.sourceEnvironmentSecretName] }}'
 
     # This step will go away after the microsoft/powerplatform-actions repo becomes public.
     - name: 'Power Platform Microsoft actions'
